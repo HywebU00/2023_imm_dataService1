@@ -1,0 +1,133 @@
+
+.fatfooter {
+    @include box-sizing;
+    @include make-fatfooter(7, 100%); // 如需要手機版顯示，把以下註解即可，或改為visible
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+.fatfooter {
+    background:$fatBgColor;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto; // 右上方切換收合按鈕設定
+    .container {
+        position: relative;
+        overflow:hidden;
+        @include box-sizing();
+        @include gutter();
+    } //fatfooter選單
+    .btn-fatfooter {
+        font-size: .813em;
+        cursor: pointer;
+        display: inline-block;
+        width: 80px;
+        color: #FFF;
+        border: none;
+        background: $fatTextbgColor;
+        position: absolute;
+        top:-2px;
+        right: 1%;
+        z-index: 999;
+
+        @include border-radius(0px 0px 10px 10px);
+
+        &:hover,
+        &:focus {
+            background: $fatTextbgColor;
+            color: $fatTextColor2;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+        }
+    }
+    nav {
+        clear: both;
+        color: #fff;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 30px 0 0 10px;
+        @include box-sizing(border-box);
+        ul {
+            list-style: none;
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            padding: 0;
+            // outline:1px solid red;
+            @media (max-width: 767px) {
+                width: 100%;
+                display: block;
+                margin: 0px auto;
+            }
+            li {
+                display: inline-block; // outline: 1px solid red;
+                text-align: left;
+                vertical-align: top;
+                line-height: 1.3em; // margin:$fatFooterliMargin;
+                @include box-sizing(border-box);
+                @media (max-width: 767px) {
+                    display:block;
+                }
+                a {
+                    color: $fatTextColor;
+                    @include box-sizing;
+                    text-align: left;
+                    line-height: 1.25em;
+                    display: block;
+                    font-weight: 400;
+                    padding: 2% 5%;
+                    &:hover,
+                    &:focus {
+                        color:$fatTextColor;
+                        text-decoration: none;
+                        background: $fatTextbgColor;
+                        @include border-radius(3px);
+                    }
+                }
+                ul {
+                    padding: 0;
+                    margin-top: 5px;
+                    overflow: hidden;
+                    @media (max-width: 767px) {
+                        width:auto;
+                        padding-left: 5%;
+                    }
+                    li {
+                        display: block;
+                        margin: 0;
+                        padding: 5px 0;
+                        border: none;
+                        background: none;
+                        width: 100%;
+                        a {
+                            display: block;
+                            color: lighten($fatTextColor2, 10);
+                            font-weight: normal;
+                            text-align: left;
+                            text-decoration: none;
+                            font-size: .938em;
+                            font-weight: normal;
+                            line-height: 1em;
+                            padding: 5px 8px;
+                            background: none;
+                            @include box-sizing(border-box);
+                            border-bottom: none;
+                            &:hover,
+                            &:focus {
+                                color:$fatTextColor2;
+                            }
+                        }
+
+                    }
+                    ul {
+                        display: none; //第三層關閉
+                    }
+                }
+            }
+        }
+    }
+}

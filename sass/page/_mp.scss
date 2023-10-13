@@ -1,0 +1,329 @@
+//mp自訂
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+/*思源黑體*/
+
+.mp-banner {
+	margin: 20px 20px;
+	img {
+		width: 100%;
+		border-radius: 10px;
+	}
+	@include screen("mobile") {
+		margin: 20px 10px 0;
+		border-radius: 5px;
+	}
+}
+
+.news {
+	text-align: left;
+	h2 {
+		font: 500 1.5em "Noto Sans TC";
+		margin: 0 0 0.5em 10px;
+		border-left: solid 5px $color-green;
+		padding-left: 10px;
+		line-height: 1em;
+	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0 15px 0 15px;
+		font: 400 1.05em "Noto Sans TC";
+		li {
+			padding: 0.5em 0;
+			border-bottom: 1px solid #bababa;
+			position: relative;
+			a {
+				display: block;
+				padding-left: 11em;
+				position: relative;
+				line-height: 1.45em;
+				@include screen("mobile") {
+					padding-left: 0;	
+				}
+			}
+			span.dept {
+				display: inline-block;
+				margin: 0 0.5em 0 1em;
+				color: $color-orange;
+				// float: left;
+				position:absolute;
+				left:5em;
+				@include screen("mobile") {
+					display: block;
+					font-size:.75em;
+					position:static;
+					margin: 0 0.5em 0 2em;
+				}
+			}
+			span.dept2 {
+				display: inline-block;
+				margin: 0 0.5em 0 1em;
+				color: $primaryColor;
+				// float: left;
+				position:absolute;
+				left:5em;
+				@include screen("mobile") {
+					display: block;
+					font-size:.75em;
+					position:static;
+				}
+			}
+			span.dept3 {
+				display: inline-block;
+				margin: 0 0.5em 0 1em;
+				color: $color-green2;
+				// float: left;
+				position:absolute;
+				left:5em;
+				@include screen("mobile") {
+					display: block;
+					font-size:.75em;
+					position:static;
+				}
+			}
+
+			span.title {
+				display: inline-block;
+				max-width: 96%;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				@include screen("mobile") {
+					display: block;
+					max-width: 98%;
+					white-space:normal;
+					text-overflow:initial;
+				}
+			}
+			time {
+				display: inline-block;
+				color: $color-time;
+				// float: left;
+				font-size: 0.93em;
+				position:absolute;
+				left:0;
+				@include screen('mobile') {
+					font-size:.75em;
+					position:static;
+					float:left;
+					margin-right: 1em;
+				}
+			}
+		}
+	}
+
+}
+.more{
+	float:right;
+	margin:1em 1em 0 0;
+	a{
+		display:block;
+		background:$color-green;
+		padding:2px 1.2em;
+		border-radius:5px;
+		color:#fff;
+		&:hover, &:focus{
+			background:$color-green2;	
+		}
+	}
+}
+
+.r-banner {
+	img {
+		width: 96%;
+		border-radius: 10px;
+		margin-top: 10px;
+		@include screen("mobile") {
+			width: 86%;
+			margin: 20px auto;
+		}
+	}
+}
+
+.service-list {
+	text-align: left;
+	margin: 15px;
+	h2 {
+		font: 500 1.5em "Noto Sans TC";
+		margin: 0 0 0.5em 10px;
+		border-left: solid 5px $color-green;
+		padding-left: 10px;
+		line-height: 1em;
+	}
+	.Responsive_slider {
+		margin: 0 15px;
+	}
+	.slick-slide a {
+		padding: 6px;
+		margin-bottom: 3px;
+		display: block;
+	}
+
+}
+
+//
+.activity-photo {
+	h2 {
+		font: 500 1.5em "Noto Sans TC";
+		margin: 0 0 0.5em 10px;
+		border-left: solid 5px $color-green;
+		padding-left: 10px;
+		line-height: 1em;
+		text-align: left;
+	}
+	.Syncing_slider {
+		width: 94%;
+		margin: 0 auto 10px;
+		margin-left: 20px;
+		.imgOuter {
+			@include aspect-ratio(16, 10);
+            //有變數
+            // @include screen("mobile") {
+            // 	@include aspect-ratio(2, 1);
+            // }
+            //自訂
+            // @media screen and (max-width:800px) {
+            // 	@include aspect-ratio(2, 1);
+            // }
+            img{
+            	max-width: 100%;
+            	max-height: 100%;
+            	width: auto;
+            	height: auto;
+            	display: block;
+            	position: absolute;
+            	top: 0;
+            	bottom: 0;
+            	right: 0;
+            	left: 0;
+            	margin: auto;
+            }
+        }
+        .slick-slide {
+        	margin: 5px 15px 10px ;
+        	overflow: hidden;
+        	border-radius: 10px;
+        }
+
+        .Slider-nav {
+        	width: 98%;
+        	margin: 0 auto;
+        	.imgOuter {
+        		@include aspect-ratio(16, 10);
+        	}
+        	.slick-slide {
+        		opacity: 0.6;
+        		margin: 10px;
+        		img {opacity: 1!important;}
+        	}
+        	.slick-current {
+        		opacity: 1;
+        	}
+            /*正在動作的縮圖*/
+            @include screen('tablet') {
+            	width: 86%;
+            	.imgOuter {
+            		@include aspect-ratio(4, 3);
+            	}
+            	.slick-slide {
+            		border-radius: 3px;
+            		margin: 5px;
+            	}
+
+
+            }
+            @include screen('mobile') {
+            	display:none;
+            }
+
+        }
+        @include screen('mobile') {
+        	width: 92%;
+        	margin-left: 15px;
+        	.slick-slide {
+        		margin: 5px 8px 10px ;
+        		border-radius: 6px;
+        	}
+        }
+
+    }
+    .more{
+    	margin:0 1em 0 0;
+    }
+}
+
+.fb-box {
+	iframe {
+		margin: 2em auto 0;
+		// width: 80%;
+		@include screen('mobile') {
+			margin: 1em auto 0;	
+		}
+		img {
+			width: 100%;
+			// height: 100%;
+		}
+	}
+}
+.G-map{
+	padding-bottom:2em;
+	h2 {
+		font: 500 1.5em "Noto Sans TC";
+		margin: 0 0 0.8em 10px;
+		border-left: solid 5px $color-green;
+		padding-left: 10px;
+		line-height: 1em;
+		text-align: left;
+	}
+	.map{
+		iframe{
+			width:100%;
+			height:380px;
+			border: none;
+			@include screen("mobile") {
+				height:280px;	
+			}
+		}
+
+	}	
+	.info{
+		background:$color-mapbg;
+		color:$color-mapText;
+		text-align:left;
+		height: 380px;
+		overflow:auto;
+		@include screen("mobile") {
+			height: auto;
+		}
+		p{
+			font-size:0.93em;
+			line-height:1.5em;
+			padding:8px;
+			margin:1em;
+		}
+	}
+
+}
+
+
+// .aaa{
+// 	display:none;
+// 	@media screen and (max-widht:768px) {
+// 		display:none;
+// 	}
+// 	@include screen('mobile') {
+// 		display:none;
+// 	}
+// }
+
+
+
+// @media screen and (max-widht:768px) {
+// 	.aaa{
+// 	display:none;
+// }
+// }
+
+
+
